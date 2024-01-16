@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 const dotenv = require('dotenv')
 const authRoutes = require('./routes/auth')
+const retrieveRoutes = require('./routes/retrieve')
 const createRoutes = require('./routes/create')
 dotenv.config()
 const PORT = 8000
@@ -19,6 +20,7 @@ app.get('/',(req,res)=>{
 
 app.use('/auth',authRoutes)
 app.use('/create',createRoutes)
+app.use('/get',retrieveRoutes)
 
 
 
