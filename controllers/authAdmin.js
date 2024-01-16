@@ -46,7 +46,7 @@ const loginAdmin = async(req,res)=>{
 
         if(!isMatch) return res.status(400).json({error:"password do not match"})
 
-        const token = jwt.sign({id:adminExist._id},process.env.secret,{
+        const token = jwt.sign({id:adminExist._id},'talhaSeven',{
          expiresIn:'24h'
         })
 

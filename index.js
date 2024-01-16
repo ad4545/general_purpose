@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 const authRoutes = require('./routes/auth')
 const createRoutes = require('./routes/create')
 dotenv.config()
-const PORT = process.env.PORT || 5000
+const PORT = 8000
 const {connectDB} = require("./db/connection");
 
 

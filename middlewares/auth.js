@@ -10,7 +10,7 @@ const auth = async(req,res,next)=>{
         if(token.startsWith("Bearer ")){
             token = token.slice(7,token.length).trimLeft();
         }
-        const verified = jwt.verify(token,process.env.secret)
+        const verified = jwt.verify(token,'talhaSeven')
         req.user=verified
         next()
     } catch (error) {
