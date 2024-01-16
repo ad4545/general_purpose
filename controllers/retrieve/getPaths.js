@@ -3,7 +3,7 @@ const { Path } = require("../../models/path")
 
 const getAllPaths = async(req,res)=>{
     try {
-        const {pageNo,pageSize} = req.body
+        const {pageNo=0,pageSize=1} = req.body
         const paths = await Path.find().skip(pageNo*pageSize).limit(pageSize)
         if(!paths) return res.status(403).json({error:"Paths are empty"})
 

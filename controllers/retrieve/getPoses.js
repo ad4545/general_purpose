@@ -2,7 +2,7 @@ const Pose = require("../../models/Pose")
 
 const getAllPoses = async(req,res)=>{
     try {
-        const {pageNo,pageSize} = req.body
+        const {pageNo=0,pageSize=1} = req.body
         const poses = await Pose.find().skip(pageNo*pageSize).limit(pageSize)
         if(!poses) return res.status(403).json({error:"Poses are empty"})
 
