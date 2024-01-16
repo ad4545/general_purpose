@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const Admin = require('../models/Admin')
+const Admin = require('../../models/Admin')
 const jwt = require('jsonwebtoken')
 
 const registerAdmin = async (req,res) => {

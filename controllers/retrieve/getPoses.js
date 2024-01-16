@@ -1,4 +1,4 @@
-const Pose = require("../models/Pose")
+const Pose = require("../../models/Pose")
 
 const getAllPoses = async(req,res)=>{
     try {

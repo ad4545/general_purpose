@@ -1,4 +1,4 @@
-const { Path } = require("../models/path")
+const { Path } = require("../../models/path")
 
 
 const getAllPaths = async(req,res)=>{

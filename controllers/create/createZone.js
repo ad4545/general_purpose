@@ -1,4 +1,4 @@
-const Zone = require("../models/Zone");
+const Zone = require("../../models/Zone");
 
 
 const createZone = async (req, res) => {
@@ -20,7 +20,7 @@ const createZone = async (req, res) => {
 
     return res.status(200).json({message:"Lane has been saved",pose:saveLane})
     } catch (error) {
-        return res.status(500).json({error})
+        return res.status(500).json({error:error.message})
     }
 };
 

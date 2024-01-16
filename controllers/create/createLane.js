@@ -1,4 +1,4 @@
-const { Lane } = require("../models/Lane");
+const { Lane } = require("../../models/Lane");
 
 const createLane = async (req, res) => {
   try {
@@ -22,7 +22,7 @@ const createLane = async (req, res) => {
       .status(200)
       .json({ message: "Lane has been saved", pose: saveLane });
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({ error:error.message });
   }
 };
 

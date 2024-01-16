@@ -1,4 +1,4 @@
-const Task = require("../models/Task");
+const Task = require("../../models/Task");
 
 const createTask = async (req, res) => {
   try {
@@ -16,7 +16,7 @@ const createTask = async (req, res) => {
       .status(200)
       .json({ message: "Task saved successfully", task: saveTask });
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({ error:error.message });
   }
 };
 

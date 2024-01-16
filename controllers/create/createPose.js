@@ -1,4 +1,4 @@
-const Pose = require("../models/Pose")
+const Pose = require("../../models/Pose")
 
 
 
@@ -19,7 +19,7 @@ const createPose = async(req,res)=>{
 
     return res.status(200).json({message:"Pose has been saved",pose:savePose})
     } catch (error) {
-        return res.status(500).json({error})
+        return res.status(500).json({error:error.message})
     }
 } 
 

@@ -1,4 +1,5 @@
-const Path = require("../models/path")
+const { Path } = require("../../models/path")
+
 
 
 
@@ -18,7 +19,7 @@ const createPath = async(req,res)=>{
 
     return res.status(200).json({message:"Path has been saved",path:savePath})
     } catch (error) {
-        return res.status(500).json({error})
+        return res.status(500).json({error:error.message})
     }
 } 
 
