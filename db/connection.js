@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const DB = "mongodb://ec2-3-110-196-136.ap-south-1.compute.amazonaws.com:27017";
+const DB = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.5";
 
 const connectDB = ()=> mongoose
   .connect(DB)
