@@ -7,11 +7,11 @@ const auth = require("../middlewares/auth");
 
 const router = require("express").Router();
 
-router.post("/path", auth, createPath);
-router.post("/pose", auth, createPose);
+router.post("/path", createPath);
+router.post("/pose", createPose);
 
-router.post("/task", auth, createTask);
-router.post("/lane", auth, createLane);
-router.post("/zone", auth, createZone);
+router.post("/task", createTask);
+router.post("/lane", createLane);
+router.post("/zone", createZone);
 
 module.exports = router;

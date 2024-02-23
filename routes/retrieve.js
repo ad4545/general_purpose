@@ -5,8 +5,8 @@ const auth = require("../middlewares/auth");
 
 const router = require("express").Router();
 
-router.get("/paths", auth, getAllPaths);
-router.get("/poses", auth, getAllPoses);
-router.get("/tasks", auth, getAllTasks);
+router.get("/paths", getAllPaths);
+router.get("/poses", getAllPoses);
+router.get("/tasks", getAllTasks);
 
 module.exports = router;
