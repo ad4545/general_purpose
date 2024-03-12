@@ -1,12 +1,17 @@
 const getAllPaths = require("../controllers/retrieve/getPaths");
 const getAllPoses = require("../controllers/retrieve/getPoses");
-const getAllTasks = require("../controllers/retrieve/getTasks");
-const auth = require("../middlewares/auth");
+const {
+  getTasksByPage,
+  getTasksCount,
+  getRecentlyAddedTasks,
+} = require("../controllers/retrieve/getTasks");
 
 const router = require("express").Router();
 
 router.get("/paths", getAllPaths);
 router.get("/poses", getAllPoses);
-router.get("/tasks", getAllTasks);
+router.get("/tasks", getTasksByPage);
+router.get("/tasks/count", getTasksCount);
+router.get("/tasks/recentlyAdded", getRecentlyAddedTasks);
 
 module.exports = router;

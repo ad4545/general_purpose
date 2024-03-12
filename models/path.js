@@ -1,18 +1,46 @@
 const mongoose = require("mongoose");
 
-const position = new mongoose.Schema({
-    x:{
-        type:String,
-        required:true
+
+
+const CoordinateSchema = new mongoose.Schema(
+  {
+    translation:{
+      x:{
+        type:Number
+      },
+      y:{
+        type:Number
+      },
+      z:{
+        type:Number
+      }
     },
-    y:{
-        type:String,
-        required:true
-    },
-    z:{
-        type:String,
-        required:true
+    rotation:{
+      x:{
+        type:Number
+      },
+      y:{
+        type:Number
+      },
+      z:{
+        type:Number
+      },
+      w:{
+        type:Number
+      }
     }
+  }
+);
+
+
+
+
+
+const position = new mongoose.Schema({
+    pathName:{
+      type:String
+    },
+    paths:[CoordinateSchema]
 })
 
 
@@ -35,14 +63,10 @@ const NodeSchema = new mongoose.Schema(
 
 const PathSchema = new mongoose.Schema(
   {
-   name:{
-    type:String,
-    required:true
-   },
-   mapId:{
-    type:String,
-   },
-   nodes:[NodeSchema]
+    pathName:{
+    type:String
+  },
+  paths:[CoordinateSchema]
   },
   { timestamps: true }
 );

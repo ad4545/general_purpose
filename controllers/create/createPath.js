@@ -5,14 +5,13 @@ const { Path } = require("../../models/path")
 
 const createPath = async(req,res)=>{
     try {
-        const {name,mapId,nodes} = req.body
+        const {paths,pathName} = req.body
 
-    if(!name || !nodes || !mapId) return res.status(403).json({error:"Required data is insufficient"})
+    if(!paths || !pathName) return res.status(403).json({error:"Required data is insufficient"})
 
     const path = new Path({
-        name,
-        mapId,
-        nodes
+        pathName,
+        paths
     })
 
     const savePath = await path.save()
