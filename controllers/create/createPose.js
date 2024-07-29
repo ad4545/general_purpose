@@ -5,13 +5,12 @@ const Pose = require("../../models/Pose")
 
 const createPose = async(req,res)=>{
     try {
-        const {name,mapId,position} = req.body
+        const {poseName,position} = req.body
 
-    if(!name || !position || !mapId) return res.status(403).json({error:"Required data is insufficient"})
+    if(!poseName || !position) return res.status(403).json({error:"Required data is insufficient"})
 
     const pose = new Pose({
-        name,
-        mapId,
+        poseName,
         position
     })
 

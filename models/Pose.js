@@ -1,16 +1,13 @@
 const mongoose = require("mongoose");
-const { position } = require("./path");
+const { position, CoordinateSchema } = require("./path");
 
 const PoseSchema = new mongoose.Schema(
   {
-    name:{
+    poseName:{
         type:String,
         required:true
     },
-    mapId:{
-        type:String
-    },
-    position:position
+    position:CoordinateSchema
   },
   { timestamps: true }
 );

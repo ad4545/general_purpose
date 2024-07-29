@@ -74,4 +74,4 @@ const PathSchema = new mongoose.Schema(
 const Path = mongoose.model("Path", PathSchema);
 
 
-module.exports = {Path,position}
+module.exports = {Path,position,CoordinateSchema}
